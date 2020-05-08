@@ -123,7 +123,37 @@ class _MyLoginState extends State<MyLogin> {
                             ],
                           ),
                         ),
-                        
+                        SizedBox(
+                          height: 40,
+                        ),
+                        Text("Forgot Password?",style: TextStyle(
+                          color: Colors.grey,
+                          fontSize: 18,
+                        ),),
+                        SizedBox(
+                          height: 30,
+                        ),
+                        Container(
+                          height: 50,
+                          margin: EdgeInsets.symmetric(horizontal: 50),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(50),
+                            color: Colors.deepOrange[900]
+                          ),
+                          child: Center(
+                            child: Text("Login",style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold
+                            ),),
+                          ),
+                        ),
+                       
+                          ],
+                        )
+                      ],
+                    ),
+                  ),
+                )),
               ],
             ),
       ),
