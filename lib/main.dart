@@ -13,6 +13,10 @@ class MyLogin extends StatefulWidget {
 }
 
 class _MyLoginState extends State<MyLogin> {
+
+  TextEditingController emailController=new TextEditingController();
+  TextEditingController passwordController=new TextEditingController();
+  bool isLoading=false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -91,9 +95,11 @@ class _MyLoginState extends State<MyLogin> {
                                       color: Colors.grey[200]
                                     )),
                                 ),
-                                child: TextField(
+                                child: TextFormField(
+                                  controller: emailController,
                                   decoration: InputDecoration(
                                     hintText: "Email or Phone Number",
+                                    icon: Icon(Icons.email),
                                     hintStyle: TextStyle(
                                       color: Colors.grey
                                     ),
@@ -110,9 +116,12 @@ class _MyLoginState extends State<MyLogin> {
                                       color: Colors.grey[200]
                                     )),
                                 ),
-                                child: TextField(
+                                child: TextFormField(
+                                  controller: passwordController,
+                                  obscureText: true,
                                   decoration: InputDecoration(
-                                    hintText: "PassWord",
+                                    hintText: "Password",
+                                    icon: Icon(Icons.lock),
                                     hintStyle: TextStyle(
                                       color: Colors.grey
                                     ),
@@ -136,16 +145,25 @@ class _MyLoginState extends State<MyLogin> {
                         Container(
                           height: 50,
                           margin: EdgeInsets.symmetric(horizontal: 50),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(50),
-                            color: Colors.deepOrange[900]
+                          child: RaisedButton(
+                            onPressed: (){
+                              setState(() {
+                                isLoading=true;
+                              });
+                              signIn(emailController.text,passwordController.text);
+                            },
+                            color: Colors.deepOrange[900],
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(50),
+                            ),
+                            child: Center(
+                              child: Text("Login",style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold
+                              ),),
+                            ),
                           ),
-                          child: Center(
-                            child: Text("Login",style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold
-                            ),),
-                          ),
+
                         ),
                         SizedBox(
                           height: 30,
@@ -196,6 +214,11 @@ class _MyLoginState extends State<MyLogin> {
       ),
     );
   }
+}
+
+signIn(String email, String password) async {
+  var response
+
 }
 
 
