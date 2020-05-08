@@ -147,7 +147,44 @@ class _MyLoginState extends State<MyLogin> {
                             ),),
                           ),
                         ),
-                       
+                        SizedBox(
+                          height: 30,
+                        ),
+                        Text("Continue with Social Media",style: TextStyle(
+                          color: Colors.grey,
+                          fontSize: 18,
+                        ),),
+                        SizedBox(
+                          height: 30,
+                        ),
+                        Row(
+                          children: <Widget>[
+                            Expanded(child: Container(
+                              height: 50,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(50),
+                                color: Colors.blue,
+                              ),
+                              child: Center(
+                                child: Text("Facebook",style: TextStyle(color: Colors.white,
+                                fontWeight: FontWeight.bold),),
+                              ),
+                            )
+                            ),
+                            SizedBox(
+                              width: 30,
+                            ),
+                            Expanded(child: Container(
+                              height: 50,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(50),
+                                color: Colors.green,
+                              ),
+                              child: Center(
+                                child: Text("GitHub",style: TextStyle(color: Colors.white,
+                                    fontWeight: FontWeight.bold),),
+                              ),
+                            )),
                           ],
                         )
                       ],
