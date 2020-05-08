@@ -70,11 +70,62 @@ class _MyLoginState extends State<MyLogin> {
                         SizedBox(
                           height: 30,
                         ),
+                        Container(
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            boxShadow: [
+                              BoxShadow(
+                                color: Color.fromARGB(225, 95, 27, 53),
+                                blurRadius: 20,
+                                offset: Offset(0,10)
+                              )],
+                            borderRadius: BorderRadius.circular(12)
+                          ),
+                          child: Column(
+                            children: <Widget>[
+                              Container(
+                                padding: EdgeInsets.all(10),
+                                decoration: BoxDecoration(
+                                  border: Border(
+                                    bottom: BorderSide(
+                                      color: Colors.grey[200]
+                                    )),
+                                ),
+                                child: TextField(
+                                  decoration: InputDecoration(
+                                    hintText: "Email or Phone Number",
+                                    hintStyle: TextStyle(
+                                      color: Colors.grey
+                                    ),
+                                    border: InputBorder.none
 
-          ],
-
-
-        ),
+                                  ),
+                                ),
+                              ),
+                              Container(
+                                padding: EdgeInsets.all(10),
+                                decoration: BoxDecoration(
+                                  border: Border(
+                                    bottom: BorderSide(
+                                      color: Colors.grey[200]
+                                    )),
+                                ),
+                                child: TextField(
+                                  decoration: InputDecoration(
+                                    hintText: "PassWord",
+                                    hintStyle: TextStyle(
+                                      color: Colors.grey
+                                    ),
+                                    border: InputBorder.none
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        
+              ],
+            ),
       ),
     );
   }
