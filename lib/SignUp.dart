@@ -10,7 +10,21 @@ class _SignUpState extends State<SignUp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-     
+      resizeToAvoidBottomInset: false,
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            colors: [
+              Colors.deepOrange[800],
+              Colors.deepOrange[600],
+              Colors.deepOrange[400],
+              Colors.deepOrange[300],
+            ]
+          )
+        ),
+
+      ),
     );
   }
 }
