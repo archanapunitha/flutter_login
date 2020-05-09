@@ -1,6 +1,9 @@
 import 'dart:convert';
+import 'package:http/http.dart' as http;
 
 import 'package:flutter/material.dart';
+import 'package:flutter_login/HomePage.dart';
+import 'package:flutter_login/LoginModel.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main(){
@@ -166,7 +169,6 @@ class _MyLoginState extends State<MyLogin> {
                               ),),
                             ),
                           ),
-
                         ),
                         SizedBox(
                           height: 30,
@@ -219,21 +221,17 @@ class _MyLoginState extends State<MyLogin> {
   }
 }
 
-signIn(String email, String password) async {
-  Map data={
-    "email":email,
-    "password":password,
-  };
+Future<LoginModel> signIn(String email, String password) async {
   var jsonData=null;
+  BuildContext context;
+  final url="https://reqres.in/api/login";
   SharedPreferences sharedPreferences=await SharedPreferences.getInstance();
-  var response=await http.post("https://reqres.in/",body:data);
-  if(response.statuscode==200){
+  final response=await http.post(Uri.encodeFull(url));
+  if(response.statusCode==200){
     jsonData=jsonDecode(response.body);
-    setState((){
-      isLoading=false;
       sharedPreferences.setString("token", jsonData.body);
-      Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (BuildContext context)=>HomePage()), (Route<dynamic>route)=>false);
-    });
+      Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context)=>HomePage()), (Route<dynamic> route)=> false);
+      return LoginModel.fromJson(jsonData);
   }
   else{
     print(response.body);
