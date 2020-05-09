@@ -1,6 +1,6 @@
 import 'dart:convert';
+import 'package:flutter_login/SignUp.dart';
 import 'package:http/http.dart' as http;
-
 import 'package:flutter/material.dart';
 import 'package:flutter_login/HomePage.dart';
 import 'package:flutter_login/LoginModel.dart';
@@ -9,20 +9,21 @@ import 'package:shared_preferences/shared_preferences.dart';
 void main(){
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    home: MyLogin()
+    home: MyApp()
   ));
 }
 
-class MyLogin extends StatefulWidget {
+class MyApp extends StatefulWidget {
   @override
   _MyLoginState createState() => _MyLoginState();
 }
 
-class _MyLoginState extends State<MyLogin> {
+class _MyLoginState extends State<MyApp> {
 
   TextEditingController emailController=new TextEditingController();
   TextEditingController passwordController=new TextEditingController();
   bool isLoading=false;
+  BuildContext context;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,7 +45,7 @@ class _MyLoginState extends State<MyLogin> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             SizedBox(
-              height: 50,
+              height: 30,
             ),
             Padding(
               padding: EdgeInsets.all(20),
@@ -64,7 +65,7 @@ class _MyLoginState extends State<MyLogin> {
               ),
             ),
             SizedBox(
-              height: 20.0,
+              height: 5.0,
             ),
             Expanded(
                 child: Container(
@@ -74,11 +75,11 @@ class _MyLoginState extends State<MyLogin> {
                         topRight: Radius.circular(60))
                   ),
                   child: Padding(
-                    padding: EdgeInsets.all(30),
+                    padding: EdgeInsets.all(20),
                     child: Column(
                       children: <Widget>[
                         SizedBox(
-                          height: 30,
+                          height: 10,
                         ),
                         Container(
                           decoration: BoxDecoration(
@@ -110,7 +111,6 @@ class _MyLoginState extends State<MyLogin> {
                                       color: Colors.grey
                                     ),
                                     border: InputBorder.none
-
                                   ),
                                 ),
                               ),
@@ -139,14 +139,14 @@ class _MyLoginState extends State<MyLogin> {
                           ),
                         ),
                         SizedBox(
-                          height: 40,
+                          height: 25,
                         ),
                         Text("Forgot Password?",style: TextStyle(
                           color: Colors.grey,
-                          fontSize: 18,
+                          fontSize: 15,
                         ),),
                         SizedBox(
-                          height: 30,
+                          height: 20,
                         ),
                         Container(
                           height: 50,
@@ -171,14 +171,29 @@ class _MyLoginState extends State<MyLogin> {
                           ),
                         ),
                         SizedBox(
-                          height: 30,
+                          height: 20,
+                        ),
+                        Container(
+                          child: new ListTile(
+                            onTap:(){
+                              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>SignUp()));
+                            },
+                            title: Text("New User?",style: TextStyle(
+                              color: Colors.grey,
+                              fontSize: 15,
+                            ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 10,
                         ),
                         Text("Continue with Social Media",style: TextStyle(
                           color: Colors.grey,
-                          fontSize: 18,
+                          fontSize: 15,
                         ),),
                         SizedBox(
-                          height: 30,
+                          height: 14,
                         ),
                         Row(
                           children: <Widget>[
@@ -236,7 +251,6 @@ Future<LoginModel> signIn(String email, String password) async {
   else{
     print(response.body);
   }
-
 }
 
 
