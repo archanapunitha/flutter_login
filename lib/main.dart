@@ -171,7 +171,7 @@ class _MyLoginState extends State<MyApp> {
                           ),
                         ),
                         SizedBox(
-                          height: 20,
+                          height: 10,
                         ),
                         Container(
                           child: new ListTile(

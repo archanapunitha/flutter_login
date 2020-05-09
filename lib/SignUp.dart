@@ -27,7 +27,7 @@ class _SignUpState extends State<SignUp> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             SizedBox(
-              height: 20,
+              height: 30,
             ),
             Padding(
                 padding: EdgeInsets.all(20),
@@ -35,10 +35,10 @@ class _SignUpState extends State<SignUp> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Text(
-                    "Signup",style: TextStyle(
+                    "Register Here",style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
-                    fontSize: 20,
+                    fontSize: 25,
                   ),
                   ),
                 ],
@@ -55,20 +55,149 @@ class _SignUpState extends State<SignUp> {
                   child: Column(
                     children: <Widget>[
                       SizedBox(
-                        height: 10,
+                        height: 15,
                       ),
                       Container(
                         decoration: BoxDecoration(
                           color: Colors.white,
                           boxShadow:[
                             BoxShadow(
-                                offset: Offset(0,10),
+                                offset: Offset(0,1),
                                 blurRadius:20,
                                 color: Color.fromARGB(225, 95, 27, 53)
-                            )
-                          ] ,
+                            )] ,
+                            borderRadius: BorderRadius.only(topLeft: Radius.circular(30),
+                                topRight: Radius.circular(30),bottomLeft: Radius.circular(30),
+                                bottomRight: Radius.circular(30))
                         ),
-                      )
+                        child: Column(
+                          children: <Widget>[
+                            Container(
+                              padding: EdgeInsets.all(10),
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                border: Border(
+                                  bottom: BorderSide(
+                                    color: Colors.grey[200],
+                                  )
+                                )
+                              ),
+                              child: TextField(
+                                decoration: InputDecoration(
+                                  hintText: "First Name",
+                                  hintStyle: TextStyle(
+                                    color: Colors.grey,
+                                  ),
+                                  border: InputBorder.none
+                                ),
+                              ),
+                            ),
+                            Container(
+                              padding: EdgeInsets.all(10),
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                border: Border(
+                                  bottom: BorderSide(
+                                    color: Colors.grey[200],
+                                  )
+                                ),
+                              ),
+                              child: TextField(
+                                decoration: InputDecoration(
+                                  hintText: "Email",
+                                  hintStyle: TextStyle(
+                                    color: Colors.grey,
+                                  ),
+                                  border: InputBorder.none
+                                ),
+                              ),
+                            ),
+                            Container(
+                              padding: EdgeInsets.all(10),
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                border: Border(
+                                  bottom: BorderSide(
+                                    color: Colors.grey[200],
+                                  )
+                                )
+                              ),
+                              child: TextField(
+                                decoration: InputDecoration(
+                                  hintText: "Phone Number",
+                                  hintStyle: TextStyle(
+                                    color: Colors.grey,
+                                  ),
+                                  border: InputBorder.none
+                                ),
+                              ),
+                            ),
+                            Container(
+                              padding: EdgeInsets.all(10),
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  border: Border(
+                                      bottom: BorderSide(
+                                        color: Colors.grey[200],
+                                      )
+                                  )
+                              ),
+                              child: TextField(
+                                decoration: InputDecoration(
+                                    hintText: "Password",
+                                    hintStyle: TextStyle(
+                                      color: Colors.grey,
+                                    ),
+                                    border: InputBorder.none
+                                ),
+                              ),
+                            ),
+                            Container(
+                              padding: EdgeInsets.all(10),
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  border: Border(
+                                      bottom: BorderSide(
+                                        color: Colors.grey[200],
+                                      )
+                                  )
+                              ),
+                              child: TextField(
+                                decoration: InputDecoration(
+                                    hintText: "Confirm Password ",
+                                    hintStyle: TextStyle(
+                                      color: Colors.grey,
+                                    ),
+                                    border: InputBorder.none
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        height: 30,
+                      ),
+                      Container(
+                        height: 50,
+                        margin: EdgeInsets.symmetric(horizontal: 50),
+                        child: RaisedButton(
+                          onPressed: (){
+
+                          },
+                          color: Colors.deepOrange[900],
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(50),
+                          ),
+                          child: Center(
+                            child: Text("Register",style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 15
+                            ),),
+                          ),
+                        ),
+                      ),
                     ],
                   ),
                 ),
