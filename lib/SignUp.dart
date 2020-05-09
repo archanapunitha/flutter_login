@@ -23,7 +23,59 @@ class _SignUpState extends State<SignUp> {
             ]
           )
         ),
-
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            SizedBox(
+              height: 20,
+            ),
+            Padding(
+                padding: EdgeInsets.all(20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Text(
+                    "Signup",style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
+                  ),
+                ],
+              ),
+            ),
+            Expanded(
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(topRight: Radius.circular(60),topLeft: Radius.circular(60))
+                ),
+                child: Padding(
+                    padding: EdgeInsets.all(20),
+                  child: Column(
+                    children: <Widget>[
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Container(
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          boxShadow:[
+                            BoxShadow(
+                                offset: Offset(0,10),
+                                blurRadius:20,
+                                color: Color.fromARGB(225, 95, 27, 53)
+                            )
+                          ] ,
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
