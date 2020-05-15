@@ -27,7 +27,7 @@ class _SignUpState extends State<SignUp> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             SizedBox(
-              height: 30,
+              height: 60,
             ),
             Padding(
                 padding: EdgeInsets.all(20),
@@ -55,120 +55,79 @@ class _SignUpState extends State<SignUp> {
                   child: Column(
                     children: <Widget>[
                       SizedBox(
-                        height: 15,
+                        height: 30,
                       ),
                       Container(
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          boxShadow:[
-                            BoxShadow(
-                                offset: Offset(0,1),
-                                blurRadius:20,
-                                color: Color.fromARGB(225, 95, 27, 53)
-                            )] ,
-                            borderRadius: BorderRadius.only(topLeft: Radius.circular(30),
-                                topRight: Radius.circular(30),bottomLeft: Radius.circular(30),
-                                bottomRight: Radius.circular(30))
-                        ),
                         child: Column(
                           children: <Widget>[
                             Container(
-                              padding: EdgeInsets.all(10),
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                border: Border(
-                                  bottom: BorderSide(
-                                    color: Colors.grey[200],
-                                  )
-                                )
-                              ),
+                              padding: EdgeInsets.all(5),
                               child: TextField(
                                 decoration: InputDecoration(
                                   hintText: "First Name",
                                   hintStyle: TextStyle(
                                     color: Colors.grey,
                                   ),
-                                  border: InputBorder.none
+                                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))
                                 ),
                               ),
                             ),
                             Container(
-                              padding: EdgeInsets.all(10),
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                border: Border(
-                                  bottom: BorderSide(
-                                    color: Colors.grey[200],
-                                  )
-                                ),
-                              ),
+                              padding: EdgeInsets.all(5),
+
                               child: TextField(
                                 decoration: InputDecoration(
                                   hintText: "Email",
                                   hintStyle: TextStyle(
                                     color: Colors.grey,
                                   ),
-                                  border: InputBorder.none
+                                    border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))
                                 ),
                               ),
                             ),
                             Container(
-                              padding: EdgeInsets.all(10),
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                border: Border(
-                                  bottom: BorderSide(
-                                    color: Colors.grey[200],
-                                  )
-                                )
-                              ),
+                              padding: EdgeInsets.all(5),
+
                               child: TextField(
                                 decoration: InputDecoration(
                                   hintText: "Phone Number",
                                   hintStyle: TextStyle(
                                     color: Colors.grey,
                                   ),
-                                  border: InputBorder.none
+                                    border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))
                                 ),
                               ),
                             ),
                             Container(
-                              padding: EdgeInsets.all(10),
-                              decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  border: Border(
-                                      bottom: BorderSide(
-                                        color: Colors.grey[200],
-                                      )
-                                  )
-                              ),
-                              child: TextField(
+                              padding: EdgeInsets.all(5),
+                             child: Column(
+                               children: <Widget>[
+                                 
+                               ],
+                             ),
+
+                             /* child: TextField(
+                                obscureText: true,
                                 decoration: InputDecoration(
                                     hintText: "Password",
                                     hintStyle: TextStyle(
                                       color: Colors.grey,
                                     ),
-                                    border: InputBorder.none
+                                    border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))
                                 ),
-                              ),
+                              ),*/
                             ),
                             Container(
-                              padding: EdgeInsets.all(10),
-                              decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  border: Border(
-                                      bottom: BorderSide(
-                                        color: Colors.grey[200],
-                                      )
-                                  )
-                              ),
+                              padding: EdgeInsets.all(5),
+
                               child: TextField(
+                                obscureText: true,
                                 decoration: InputDecoration(
                                     hintText: "Confirm Password ",
                                     hintStyle: TextStyle(
                                       color: Colors.grey,
                                     ),
-                                    border: InputBorder.none
+                                    border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))
                                 ),
                               ),
                             )
@@ -193,7 +152,7 @@ class _SignUpState extends State<SignUp> {
                             child: Text("Register",style: TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold,
-                                fontSize: 15
+                                fontSize: 20
                             ),),
                           ),
                         ),

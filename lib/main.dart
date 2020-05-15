@@ -45,7 +45,7 @@ class _MyLoginState extends State<MyApp> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             SizedBox(
-              height: 30,
+              height: 40,
             ),
             Padding(
               padding: EdgeInsets.all(20),
@@ -56,7 +56,7 @@ class _MyLoginState extends State<MyApp> {
                     color: Colors.white,fontSize: 30,
                   ),),
                   SizedBox(
-                    height: 10,
+                    height: 20,
                   ),
                   Text("Welcome Back",style: TextStyle(
                       color: Colors.white,fontSize: 18,
@@ -75,11 +75,11 @@ class _MyLoginState extends State<MyApp> {
                         topRight: Radius.circular(60))
                   ),
                   child: Padding(
-                    padding: EdgeInsets.all(20),
+                    padding: EdgeInsets.all(25),
                     child: Column(
                       children: <Widget>[
                         SizedBox(
-                          height: 10,
+                          height: 30,
                         ),
                         Container(
                           decoration: BoxDecoration(
@@ -165,7 +165,8 @@ class _MyLoginState extends State<MyApp> {
                             child: Center(
                               child: Text("Login",style: TextStyle(
                                   color: Colors.white,
-                                  fontWeight: FontWeight.bold
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20.0
                               ),),
                             ),
                           ),
@@ -175,6 +176,7 @@ class _MyLoginState extends State<MyApp> {
                         ),
                         Container(
                           child: new ListTile(
+
                             onTap:(){
                               Navigator.of(context).push(MaterialPageRoute(builder: (context)=>SignUp()));
                             },
